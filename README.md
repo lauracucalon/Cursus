@@ -1,2 +1,2 @@
-# test
+# CURSUS
 42Malaga
