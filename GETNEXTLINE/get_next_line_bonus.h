@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lacucalo <lacucalo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 17:05:11 by lacucalo          #+#    #+#             */
-/*   Updated: 2023/05/30 16:54:41 by lacucalo         ###   ########.fr       */
+/*   Created: 2023/05/30 16:51:58 by lacucalo          #+#    #+#             */
+/*   Updated: 2023/05/30 16:54:34 by lacucalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 10000
+# define BUFFER_SIZE 100
+
+# endif
+
+# ifndef FD_MAX
+#  define FD_MAX 1024
 
 # endif
 

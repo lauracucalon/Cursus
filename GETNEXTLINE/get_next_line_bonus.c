@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lacucalo <lacucalo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 11:44:09 by lacucalo          #+#    #+#             */
-/*   Updated: 2023/05/30 16:41:19 by lacucalo         ###   ########.fr       */
+/*   Created: 2023/05/30 16:51:42 by lacucalo          #+#    #+#             */
+/*   Updated: 2023/05/30 16:56:23 by lacucalo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char *del_line(char *saved)
 {
@@ -84,7 +84,7 @@ char	*sol_saved(char *saved, char *temp)
 
 char *get_next_line(int fd)
 {
-    static char *saved = NULL;
+    static char *saved[FD_MAX] = {NULL};
     char *line;
     ssize_t countbytes;
     char temp[BUFFER_SIZE + 1];
@@ -92,19 +92,19 @@ char *get_next_line(int fd)
     if(fd < 0 || BUFFER_SIZE <= 0)
         return(NULL);
     countbytes = 1;
-    while (!(ft_strchr(saved, '\n')) && countbytes > 0)
+    while (!(ft_strchr(saved[fd], '\n')) && countbytes > 0)
     {
         countbytes = read(fd, temp, BUFFER_SIZE);
         if (countbytes < 0)
-			return (free(saved), saved = NULL, NULL);
+			return (free(saved[fd]), saved[fd] = NULL, NULL);
         temp[countbytes] = '\0';
-        saved = sol_saved(saved, temp);
-        if (!saved)
+        saved[fd] = sol_saved(saved[fd], temp);
+        if (!saved[fd])
 			return (NULL);
     }
     
-    line = new_line(saved);
-    saved = del_line(saved);
+    line = new_line(saved[fd]);
+    saved[fd] = del_line(saved[fd]);
 
     return(line);
 }
