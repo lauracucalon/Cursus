@@ -6,11 +6,11 @@
 #    By: lacucalo <lacucalo@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/08 17:13:18 by lacucalo          #+#    #+#              #
-#    Updated: 2023/05/15 13:55:55 by lacucalo         ###   ########.fr        #
+#    Updated: 2023/06/02 16:23:06 by lacucalo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf.a
+NAME = libftprintf.a
 
 OBJ = $(SOURCES:.c=.o)
 
