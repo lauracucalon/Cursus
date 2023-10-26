@@ -1,4 +1,2 @@
-coco
-k lokilla
-mango
-manga
+uno
+dos
